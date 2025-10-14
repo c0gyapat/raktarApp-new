@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RaktarApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0af4020dbbe5d44d82f95077f7d148b0409d99b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8b7156da9c63e8118b8a5a5a8f266ee1625a882")]
 [assembly: System.Reflection.AssemblyProductAttribute("RaktarApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RaktarApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
