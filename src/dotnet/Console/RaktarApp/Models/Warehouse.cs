@@ -107,6 +107,24 @@ namespace Project1.Models
             _items.Add(item);
         }
 
+        public void RemoveItem(WarehouseItem item)
+        {
+            if (item == null)
+            {
+                throw new ArgumentException("Item cannot be null");
+            }
+            if (!_items.Contains(item))
+            {
+                throw new ArgumentException("Item does not exist in the warehouse");
+            }
+
+            if (_items.Find(i => i.Id == item.Id)?.Quantity != 0)
+            {
+                throw new InvalidOperationException("Item quantity must be zero to remove it from the warehouse");
+            }
+
+            _items.Remove(item);
+        }
 
         public override string ToString()
         {
