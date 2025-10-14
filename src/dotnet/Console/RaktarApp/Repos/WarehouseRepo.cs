@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Project1.Models;
+using RaktarApp.Models;
 
 namespace RaktarApp.Repos
 {
@@ -45,6 +45,19 @@ namespace RaktarApp.Repos
             {
                 throw new ArgumentException("Warehouse not found");
             }
+        }
+
+        public void AddWarehouse(Warehouse warehouse)
+        {
+            if(warehouse == null)
+            {
+                throw new ArgumentException("Warehouse cannot be null");
+            }
+            if(_warehouses.Contains(warehouse))
+            {
+                throw new ArgumentException("Warehouse already exists");
+            }
+            _warehouses.Add(warehouse);
         }
     }
 }
