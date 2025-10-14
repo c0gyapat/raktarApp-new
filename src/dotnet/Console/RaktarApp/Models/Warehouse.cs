@@ -55,7 +55,7 @@ namespace Project1.Models
         public string Name
         {
             get => _name; 
-            set => _name = value;
+            private set => _name = value;
         }
 
         public string Country
@@ -82,6 +82,31 @@ namespace Project1.Models
         {
             get => _address;
         }
+
+        public void SetName(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentException("Name cannot be empty");
+            }
+            Name = name;
+        }
+
+        public void AddItem(WarehouseItem item)
+        {
+            if (item == null)
+            {
+                throw new ArgumentException("Item cannot be null");
+            }
+
+            if(_items.Contains(item))
+            {
+                throw new ArgumentException("Item already exists in the warehouse");
+            }
+
+            _items.Add(item);
+        }
+
 
         public override string ToString()
         {
