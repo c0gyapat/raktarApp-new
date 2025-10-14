@@ -15,6 +15,7 @@ namespace Project1.Models
         private string _position;
         private int _warehouseId;
 
+        public Employee() { }
         public Employee(string name, string position, int warehouseId)
         {
             if (string.IsNullOrWhiteSpace(name))

@@ -13,6 +13,7 @@ namespace Project1.Models
         public string _name;
         public int _quantity;
 
+        public WarehouseItem() { }
 
         public WarehouseItem(string name, int quantity)
         {

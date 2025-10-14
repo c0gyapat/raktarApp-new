@@ -26,6 +26,7 @@ namespace Project1.Models
 
         public List<WarehouseItem> _items = new List<WarehouseItem>();
 
+        public Warehouse() { }
         public Warehouse(string name, Dictionary<string, string> address)
         {
 
