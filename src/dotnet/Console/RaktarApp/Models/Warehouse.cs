@@ -1,0 +1,92 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Project1.Models
+{
+    internal class Warehouse
+    {
+        private int _nextId = 1;
+
+        private readonly int _id;
+
+        private string _name;
+
+        public readonly string _country;
+
+        public readonly string _region;
+
+        public readonly int _postCode;
+
+        public readonly string _city;
+
+        public readonly string _address;
+
+        public List<WarehouseItem> _items = new List<WarehouseItem>();
+
+        public Warehouse(string name, Dictionary<string, string> address)
+        {
+
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentException("Name cannot be empty");
+            }
+
+
+            if (!address.ContainsKey("address") || !address.ContainsKey("city") || !address.ContainsKey("postCode") || !address.ContainsKey("region") || !address.ContainsKey("country"))
+            {
+                throw new ArgumentException("Address must contain country, region, postCode, city, address");
+
+            }
+
+            _id = _nextId++;
+            _name = name;
+            _address = address["address"];
+            _city = address["city"];
+            _postCode = int.Parse(address["postCode"]);
+            _region = address["region"];
+            _country = address["country"];
+        }
+
+        public int Id => _id;
+        public string Name
+        {
+            get => _name; 
+            set => _name = value;
+        }
+
+        public string Country
+        {
+            get => _country;
+        }
+
+        public string Region
+        {
+            get => _region;
+        }
+
+        public int PostCode
+        {
+            get => _postCode;
+        }
+
+        public string City
+        {
+            get => _city;
+        }
+
+        public string Address
+        {
+            get => _address;
+        }
+
+        public override string ToString()
+        {
+            return $"Warehouse ID: {_id}, Name: {_name}, Address: {_country} {_region} {_postCode} {_city} {_address}";
+        }
+
+
+    }
+}
