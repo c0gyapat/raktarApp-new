@@ -126,6 +126,11 @@ namespace Project1.Models
             _items.Remove(item);
         }
 
+        public bool CanDelete()
+        {
+            return _items.Count == 0;
+        }
+
         public override string ToString()
         {
             return $"Warehouse ID: {_id}, Name: {_name}, Address: {_country} {_region} {_postCode} {_city} {_address}";
