@@ -56,6 +56,28 @@ namespace Project1.Models
             return _quantity;
         }
 
+        public void IncreaseQuantity(int amount)
+        {
+            if(amount < 0)
+            {
+                throw new ArgumentException("Amount cannot be negative");
+            }
+            _quantity += amount;
+        }
+
+        public void DecreaseQuantity(int amount)
+        {
+            if(amount < 0)
+            {
+                throw new ArgumentException("Amount cannot be negative");
+            }
+            if(_quantity - amount < 0)
+            {
+                throw new ArgumentException("Quantity cannot be negative");
+            }
+            _quantity -= amount;
+        }
+
         public string SetName( string name)
         {
             if(string.IsNullOrWhiteSpace(name))
@@ -68,7 +90,7 @@ namespace Project1.Models
 
         public override string ToString()
         {
-            return $"ID: {_id}, Name: {_name}, Quantity: {_quantity}";
+            return $"Cikkszám: {_id}, {_name} - {_quantity}db";
         }
 
     }
