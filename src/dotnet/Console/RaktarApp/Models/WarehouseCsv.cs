@@ -12,15 +12,15 @@ namespace RaktarApp.Models
 
         private readonly string _name;
 
-        public readonly string _country;
+        private readonly string _country;
 
-        public readonly string _region;
+        private readonly string _region;
 
-        public readonly string _postCode;
+        private readonly string _postCode;
 
-        public readonly string _city;
+        private readonly string _city;
 
-        public readonly string _address;
+        private readonly string _address;
 
 
         public WarehouseCsv(string id, string name, string country, string region, string postCode, string city, string address)

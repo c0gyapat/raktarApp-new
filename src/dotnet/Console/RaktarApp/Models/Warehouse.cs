@@ -14,17 +14,17 @@ namespace RaktarApp.Models
 
         private string _name;
 
-        public readonly string _country;
+        private readonly string _country;
 
-        public readonly string _region;
+        private readonly string _region;
 
-        public readonly int _postCode;
+        private readonly int _postCode;
 
-        public readonly string _city;
+        private readonly string _city;
 
-        public readonly string _address;
+        private readonly string _address;
 
-        public List<WarehouseItem> _items = new List<WarehouseItem>();
+        private List<WarehouseItem> _items = new List<WarehouseItem>();
 
         public Warehouse() { }
         public Warehouse(string name, Dictionary<string, string> address)

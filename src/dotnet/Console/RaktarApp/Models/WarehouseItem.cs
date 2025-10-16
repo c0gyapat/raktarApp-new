@@ -10,8 +10,8 @@ namespace RaktarApp.Models
     {
         private int _nextId = 1;
         private readonly int _id;
-        public string _name;
-        public int _quantity;
+        private string _name;
+        private int _quantity;
 
         public WarehouseItem() { }
 
